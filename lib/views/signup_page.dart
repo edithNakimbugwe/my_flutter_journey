@@ -9,7 +9,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: MyTextWidget(
-        text: "welcome!",
+        text: "welcome Guys!",
       )),
     );
   }
