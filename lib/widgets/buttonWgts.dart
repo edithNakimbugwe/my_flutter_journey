@@ -20,7 +20,7 @@ class MyButtonWidget extends StatelessWidget {
         function();
       },
       child: Container(
-        width: 250,
+        width: 100,
         height: 50,
         decoration: BoxDecoration(
           color: color,

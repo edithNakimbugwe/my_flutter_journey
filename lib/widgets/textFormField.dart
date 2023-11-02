@@ -20,19 +20,22 @@ class MyTextFormFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      validator: validation,
-      obscureText: isPassword,
-      controller: control,
-      decoration: InputDecoration(
-        label: text,
-        hintText: hint,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-        suffixIcon: isPassword
-            ? IconButton(onPressed: () {}, icon: const Icon(Icons.visibility))
-            : Container(
-                width: 0,
-              ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 0, 40, 10),
+      child: TextFormField(
+        validator: validation,
+        obscureText: isPassword,
+        controller: control,
+        decoration: InputDecoration(
+          label: text,
+          hintText: hint,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          suffixIcon: isPassword
+              ? IconButton(onPressed: () {}, icon: const Icon(Icons.visibility))
+              : Container(
+                  width: 0,
+                ),
+        ),
       ),
     );
   }
