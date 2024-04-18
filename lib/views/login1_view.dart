@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pro_1/views/signup_page.dart';
+import 'package:pro_1/controllers/login_controllers.dart';
+import 'package:pro_1/views/SignUp.dart';
+import 'package:pro_1/views/home_view.dart';
 import 'package:pro_1/widgets/text_wgt.dart';
-import '../controllers/all_controllers.dart';
-import '../widgets/buttonWgts.dart';
 import '../widgets/textFormField.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final MyControllers controller = Get.put(MyControllers());
+    final LoginController loginController = Get.put(LoginController());
+
     return Scaffold(
         body: Container(
             decoration: const BoxDecoration(
@@ -39,52 +40,43 @@ class HomePage extends StatelessWidget {
                       height: 40,
                     ),
                     Form(
-                        key: controller.formKey,
+                        key: loginController.loginFormKey,
                         child: Center(
                           child: Column(
                             children: [
                               MyTextFormFieldWidget(
-                                  validation: controller.validateEmail,
+                                  validation: loginController.validateEmail,
                                   text: MyTextWidget(text: 'Email'),
-                                  control: controller.eControl,
+                                  control: loginController.emailControl,
                                   hint: 'fungfang@gmail.com'),
                               const SizedBox(
                                 height: 20,
                               ),
                               MyTextFormFieldWidget(
-                                validation: controller.validatePassword,
+                                validation: loginController.validatePassword,
                                 text: MyTextWidget(text: 'Password'),
-                                control: controller.pControl,
+                                control: loginController.passwordControl,
                                 hint: '****************',
                                 isPassword: true,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
-                              MyButtonWidget(
-                                text: MyTextWidget(
-                                  text: 'Login',
-                                  isHeading: true,
-                                  colors: Colors.amber,
-                                ),
-                                function: () {
-                                  if (controller.formKey.currentState!
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.amber)),
+                                onPressed: () {
+                                  if (loginController.loginFormKey.currentState!
                                       .validate()) {
-                                    Get.offAll(() => const SignUpPage());
-                                    Get.snackbar(
-                                      'Great!',
-                                      'your login was successful......',
-                                      snackPosition: SnackPosition.TOP,
-                                      isDismissible: true,
-                                      dismissDirection:
-                                          DismissDirection.horizontal,
-                                      duration: const Duration(seconds: 3),
-                                      colorText: Colors.black,
-                                      backgroundColor: Colors.amber,
-                                    );
+                                    loginController.login();
                                   }
                                 },
-                                color: Colors.black,
+                                child: MyTextWidget(
+                                  text: 'Login',
+                                  isHeading: true,
+                                ),
                               ),
                               const SizedBox(
                                 height: 10,
@@ -97,17 +89,20 @@ class HomePage extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
-                              MyButtonWidget(
-                                text: MyTextWidget(
-                                  text: 'SignUp',
-                                  isHeading: true,
-                                  colors: Colors.black,
-                                ),
-                                function: () {
-                                  Get.offAll(() => const SignUpPage());
-                                },
-                                color: Colors.amber,
-                              ),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Get.to(() => const SignUpPage());
+                                  },
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.black),
+                                  ),
+                                  child: MyTextWidget(
+                                    text: 'SignUp',
+                                    isHeading: true,
+                                    colors: Colors.white,
+                                  )),
                               const SizedBox(
                                 height: 10,
                               ),
