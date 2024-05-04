@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:pro_1/widgets/text_wgt.dart';
 
@@ -14,7 +16,8 @@ class MyTextFormFieldWidget extends StatelessWidget {
   final MyTextWidget text;
   bool isPassword;
   Color colors;
-  final validation;
+  // ignore: prefer_typing_uninitialized_variables
+  final  validation;
   final TextEditingController control;
   final hint;
 

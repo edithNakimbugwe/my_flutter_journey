@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pro_1/controllers/login_controllers.dart';
-import 'package:pro_1/views/SignUp.dart';
-import 'package:pro_1/views/home_view.dart';
+import 'package:pro_1/views/signup_view.dart';
 import 'package:pro_1/widgets/text_wgt.dart';
-import '../widgets/textFormField.dart';
+import '../widgets/textformfield_widget.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

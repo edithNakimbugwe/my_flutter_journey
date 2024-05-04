@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pro_1/controllers/signup_controllers.dart';
-import 'package:pro_1/views/home_view.dart';
 import 'package:pro_1/views/login1_view.dart';
-import '../widgets/textFormField.dart';
+import '../widgets/textformfield_widget.dart';
 import '../widgets/text_wgt.dart';
 
 class SignUpPage extends StatelessWidget {

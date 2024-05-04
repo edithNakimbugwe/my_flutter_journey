@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
 import 'package:pro_1/views/landing_view.dart';
 import 'package:pro_1/views/onboarding/onboarding_items.dart';
 

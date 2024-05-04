@@ -10,7 +10,7 @@ class AuthController extends GetxController {
 
   @override
   void onReady() {
-    // TODO: implement onReady
+    
     super.onReady();
     _firebaseUser = Rx<User?>(_auth.currentUser);
     _firebaseUser.bindStream(_auth.authStateChanges());

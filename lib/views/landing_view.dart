@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pro_1/views/SignUp.dart';
+import 'package:pro_1/views/signup_view.dart';
 import 'package:pro_1/views/login1_view.dart';
 import '../widgets/text_wgt.dart';
 
