@@ -13,13 +13,13 @@ class AnimatedButton extends StatelessWidget {
           },
           child: AnimatedContainer(
             duration: Duration(milliseconds: 300),
-            width: _.buttonSize,
-            height: _.buttonSize,
+            width: _.buttonSize.value,
+            height: _.buttonSize.value,
             decoration: BoxDecoration(
-              color: _.buttonColor,
+              color: _.buttonColor.value,
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 'Tap me!',
                 style: TextStyle(
@@ -40,7 +40,8 @@ class AnimatedButtonController extends GetxController {
   var buttonSize = 100.0.obs;
 
   void changeButtonState() {
-    buttonColor.value = buttonColor.value == Colors.blue ? Colors.red : Colors.blue;
+    buttonColor.value =
+        buttonColor.value == Colors.blue ? Colors.red : Colors.blue;
     buttonSize.value = buttonSize.value == 100.0 ? 120.0 : 100.0;
   }
 }
